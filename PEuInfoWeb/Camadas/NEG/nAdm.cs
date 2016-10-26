@@ -10,21 +10,17 @@ namespace PEuInfoWeb.Camadas.NEG
     public class nAdm
     {
         
-        public eAdm LoginAdm()
+        public List<eAdm> LoginAdm(string nome, string email, string senha)
         {
-            eAdm login = new eAdm();
-
             try
             {
-
+                dAdm adm = new dAdm();
+                return adm.ListarAdms(nome, email,senha);
             }
             catch (Exception e)
             {
-
                 throw e;
             }
-
-            return login;
         } 
     }
 }

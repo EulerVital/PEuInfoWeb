@@ -42,14 +42,12 @@ namespace PEuInfoWeb.Camadas.DAO
             try
             {
                 while (dr.Read())
-                {
                     listaAdms.Add(SetarObjeto(dr));
-                }
+
                 return listaAdms;
             }
             catch (SqlException sqlex)
             {
-
                 throw sqlex;
             }
             finally
