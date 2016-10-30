@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PEuInfoWeb.master.cs" Inherits="PEuInfoWeb.Paginas.PEuInfoWeb" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="../bootstrap/Content/bootstrap-theme.css"  rel="stylesheet"/>
+    <link href="../bootstrap/Content/bootstrap-theme.css.map"  rel="stylesheet"/>
+    <link href="../bootstrap/Content/bootstrap-theme.min.css"  rel="stylesheet"/>
+    <link href="../bootstrap/Content/bootstrap.css"  rel="stylesheet"/>
+    <link href="../bootstrap/Content/bootstrap.css.map"  rel="stylesheet"/>
+    <link href="../bootstrap/Content/bootstrap.min.css"  rel="stylesheet"/>
+    <link href="../bootstrap/Content/bootstrap.min.css.map"  rel="stylesheet"/>
+
+    <script src="../bootstrap/Scripts/bootstrap.js"></script>
+    <script src="../bootstrap/Scripts/bootstrap.min.js"></script>
+    <script src="../bootstrap/Scripts/jquery-3.1.1.intellisense.js"></script>
+    <script src="../bootstrap/Scripts/jquery-3.1.1.js"></script>
+    <script src="../bootstrap/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="../bootstrap/Scripts/jquery-3.1.1.slim.js"></script>
+    <script src="../bootstrap/Scripts/jquery-3.1.1.min.map"></script>
+    <script src="../bootstrap/Scripts/jquery-3.1.1.slim.min.js"></script>
+    <script src="../bootstrap/Scripts/jquery-3.1.1.slim.min.map"></script>
+
+    <title></title>
+</head>
+<body>
+    <div class="navbar-fixed-top navbar-inverse">
+        <a href="PEuInfoWeb.Master" style="text-decoration:none;"><h2>PEuInfoWeb</h2></a>
+        <form class="navbar-form pull-right">
+            <input name="textinput1" placeholder="Email" class="span2" type="email" />
+            <input name="textinput2" placeholder="Password" class="span2" type="password" />
+            <button class="btn">Logar</button>
+        </form>
+     </div>
+    <div class="container">
+        <asp:ContentPlaceHolder ID="conteudo" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="navbar-fixed-bottom">
+        <footer>Rodapé</footer>
+    </div>
+
+</body>
+</html>
