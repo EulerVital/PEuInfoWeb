@@ -18,7 +18,7 @@ BEGIN
 		VALUES
 		(
 			 @Nome
-			,@Email
+			,LOWER(@Email)
 			,@Senha
 		)
 	END
@@ -26,7 +26,7 @@ BEGIN
 	BEGIN
 		UPDATE TB_ADM SET
 			 NOME = @Nome
-			,EMAIL = @Email
+			,EMAIL = LOWER(@Email)
 			,SENHA = @Senha
 		WHERE
 			ID = @Id
