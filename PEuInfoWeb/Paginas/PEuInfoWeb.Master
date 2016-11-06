@@ -28,18 +28,18 @@
     <div class="navbar-fixed-top navbar-inverse">
         <a href="PEuInfoWeb.Master" style="text-decoration:none;"><h2>PEuInfoWeb</h2></a>
         <form class="navbar-form pull-right">
-            <input name="textinput1" placeholder="Email" class="span2" type="email" />
-            <input name="textinput2" placeholder="Password" class="span2" type="password" />
-            <button class="btn">Logar</button>
+            <input name="textinput1" placeholder="Email" class="form-control" type="email" />
+            <input name="textinput2" placeholder="Password" class="form-control" type="password" />
+            <button class="btn btn-primary">Logar</button>
         </form>
-     </div>
-    <div class="container">
-        <asp:ContentPlaceHolder ID="conteudo" runat="server">
-        </asp:ContentPlaceHolder>
     </div>
+    <br /><br /><br /><br /><br /><br />
+    <asp:ContentPlaceHolder ID="conteudo" runat="server">
+    </asp:ContentPlaceHolder>
+    <br />
     <div class="navbar-fixed-bottom">
-        <footer>Rodapé</footer>
+        <footer><center>PEuInfoWeb - Projeto Euler Info Web 2016</center></footer>
     </div>
-
+   
 </body>
 </html>

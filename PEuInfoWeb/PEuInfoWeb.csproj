@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataBase\Procedures\USP_DEL_ADM.sql" />
     <Content Include="DataBase\Procedures\USP_INS_ADM.sql" />
     <Content Include="DataBase\Procedures\USP_SEL_ADM.sql" />
     <Content Include="DataBase\Tables\TB_ADM.sql" />
