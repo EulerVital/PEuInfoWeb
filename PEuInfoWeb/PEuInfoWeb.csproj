@@ -66,9 +66,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBase\Procedures\USP_DEL_ADM.sql" />
-    <Content Include="DataBase\Procedures\USP_INS_ADM.sql" />
-    <Content Include="DataBase\Procedures\USP_SEL_ADM.sql" />
+    <Content Include="bootstrap\Scripts\Gruntfile.js" />
+    <Content Include="bootstrap\Scripts\jquery.mask.js" />
+    <Content Include="bootstrap\Scripts\jquery.mask.min.js" />
+    <Content Include="bootstrap\Scripts\jquery.maskedinput-1.3.min.js" />
+    <Content Include="DataBase\Procedures\USP_DEL_USER_DADOS_PESSOAIS.sql" />
+    <Content Include="DataBase\Procedures\USP_INS_USER_DADOS_PESSOAIS.sql" />
+    <Content Include="DataBase\Procedures\USP_SEL_USER_DADOS_PESSOAIS.sql" />
     <Content Include="DataBase\Tables\TB_ADM.sql" />
     <Content Include="packages.config" />
     <Content Include="bootstrap\Scripts\jquery-3.1.1.slim.min.map" />
@@ -106,16 +110,16 @@
     <Content Include="bootstrap\Scripts\jquery-3.1.1.min.js" />
     <Content Include="bootstrap\Scripts\jquery-3.1.1.slim.js" />
     <Content Include="bootstrap\Scripts\jquery-3.1.1.slim.min.js" />
-    <Content Include="Paginas\peuLoginAdm.aspx" />
+    <Content Include="Paginas\inicio.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Camadas\DAO\dAdm.cs" />
+    <Compile Include="Camadas\DAO\dUsuarioDadosPessoais.cs" />
     <Compile Include="Camadas\DAO\DBUtil\dConexao.cs" />
-    <Compile Include="Camadas\ENT\eAdm.cs" />
-    <Compile Include="Camadas\NEG\nAdm.cs" />
+    <Compile Include="Camadas\ENT\eUsuarioDadosPessoais.cs" />
+    <Compile Include="Camadas\NEG\nUsuarioDadosPessoais.cs" />
     <Compile Include="Paginas\PEuInfoWeb.Master.cs">
       <DependentUpon>PEuInfoWeb.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,12 +127,12 @@
     <Compile Include="Paginas\PEuInfoWeb.Master.designer.cs">
       <DependentUpon>PEuInfoWeb.Master</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\peuLoginAdm.aspx.cs">
-      <DependentUpon>peuLoginAdm.aspx</DependentUpon>
+    <Compile Include="Paginas\inicio.aspx.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\peuLoginAdm.aspx.designer.cs">
-      <DependentUpon>peuLoginAdm.aspx</DependentUpon>
+    <Compile Include="Paginas\inicio.aspx.designer.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

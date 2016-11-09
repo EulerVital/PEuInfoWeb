@@ -9,45 +9,51 @@ using System.Data.SqlClient;
 
 namespace PEuInfoWeb.Camadas.DAO
 {
-    public class dAdm : dConexao
+    public class dUsuarioDadosPessoais : dConexao
     {
         IDataReader dr;
 
         #region Explicação da Classe
 
         /// <summary>
-        /// Está classe é responsavel por listar administradores, cadastrar e deletar do banco de dados
+        /// Está classe é responsavel por listar usuario, cadastrar e deletar do banco de dados
         /// </summary>
 
         #endregion
 
-        #region Setar Administrador
-        public eAdm SetarObjeto(IDataReader dr)
+        #region Setar User
+        public eUsuarioDadosPessoais SetarObjeto(IDataReader dr)
         {
-            eAdm adm = new eAdm();
+            eUsuarioDadosPessoais usuario = new eUsuarioDadosPessoais();
 
-            adm.nome = dr["NOME"].ToString();
-            adm.email = dr["EMAIL"].ToString();
-            adm.senha = dr["SENHA"].ToString();
+            usuario.Nome = dr["Nome"].ToString();
+            usuario.Email = dr["Email"].ToString();
+            usuario.Senha = dr["Senha"].ToString();
+            usuario.Telefone = dr["Telefone"].ToString();
+            usuario.Celular = dr["Celular"].ToString();
+            usuario.DataNascimento = dr["DataNascimento"].ToString();
 
-            return adm;
+            return usuario;
         }
         #endregion
 
-        #region Lista Administradores
-        public List<eAdm> listarAdms(string nome, string email, string senha)
+        #region Lista User
+        public List<eUsuarioDadosPessoais> listarUser(eUsuarioDadosPessoais usuario)
         {
-            List<eAdm> listaAdms = new List<eAdm>();
+            List<eUsuarioDadosPessoais> listaAdms = new List<eUsuarioDadosPessoais>();
 
             SqlComd = new SqlCommand();
             SqlCon = Conectar();
             SqlComd.Connection = SqlCon;
             SqlComd.CommandType = CommandType.StoredProcedure;
-            SqlComd.CommandText = "USP_SEL_ADM";
+            SqlComd.CommandText = "USP_SEL_USER_DADOS_PESSOAIS";
 
-            SqlComd.Parameters.AddWithValue("@Nome", nome);
-            SqlComd.Parameters.AddWithValue("@Email", email);
-            SqlComd.Parameters.AddWithValue("@Senha", senha);
+            SqlComd.Parameters.AddWithValue("@Nome", usuario.Nome);
+            SqlComd.Parameters.AddWithValue("@Email", usuario.Email);
+            SqlComd.Parameters.AddWithValue("@Senha", usuario.Senha);
+            SqlComd.Parameters.AddWithValue("@Telefone", usuario.Telefone);
+            SqlComd.Parameters.AddWithValue("@Celular", usuario.Celular);
+            SqlComd.Parameters.AddWithValue("@DataNascimento", usuario.DataNascimento);
 
             dr = SqlComd.ExecuteReader();
 
@@ -69,20 +75,24 @@ namespace PEuInfoWeb.Camadas.DAO
         }
         #endregion
 
-        #region Cadastrar e Alterar Administradores
+        #region Cadastrar e Alterar User
 
-        public bool gravarAdm(int? id, string nome, string email, string senha)
+        public bool gravarUser(eUsuarioDadosPessoais usuario)
         {
             SqlComd = new SqlCommand();
+            SqlComd.CommandType = CommandType.StoredProcedure;
+            SqlComd.CommandText = "USP_INS_USER_DADOS_PESSOAIS";
+
+            SqlComd.Parameters.AddWithValue("@Id", null);
+            SqlComd.Parameters.AddWithValue("@Nome",usuario.Nome);
+            SqlComd.Parameters.AddWithValue("@Email", usuario.Email);
+            SqlComd.Parameters.AddWithValue("@Senha", usuario.Senha);
+            SqlComd.Parameters.AddWithValue("@Telefone", usuario.Telefone);
+            SqlComd.Parameters.AddWithValue("@Celular", usuario.Celular);
+            SqlComd.Parameters.AddWithValue("@DataNascimento", usuario.DataNascimento);
+
             SqlCon = Conectar();
             SqlComd.Connection = SqlCon;
-            SqlComd.CommandType = CommandType.StoredProcedure;
-            SqlComd.CommandText = "USP_INS_ADM";
-
-            SqlComd.Parameters.AddWithValue("@Id", id);
-            SqlComd.Parameters.AddWithValue("@Nome",nome);
-            SqlComd.Parameters.AddWithValue("@Email", email);
-            SqlComd.Parameters.AddWithValue("@Senha", senha);
 
             try
             {
@@ -112,15 +122,15 @@ namespace PEuInfoWeb.Camadas.DAO
 
         #endregion
 
-        #region Delatar Administradores
+        #region Delatar User
 
-        public bool deletarAdm(int? id)
+        public bool deletarUser(int? id)
         {
             SqlComd = new SqlCommand();
             SqlCon = Conectar();
             SqlComd.Connection = SqlCon;
             SqlComd.CommandType = CommandType.StoredProcedure;
-            SqlComd.CommandText = "USP_DEL_ADM";
+            SqlComd.CommandText = "USP_DEL_USER_DADOS_PESSOAIS";
 
             SqlComd.Parameters.AddWithValue("@Id", id);
 
