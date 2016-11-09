@@ -16,9 +16,16 @@ namespace PEuInfoWeb.Camadas.DAO.DBUtil
 
         public SqlConnection Conectar()
         {
-            conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["strConnection"].ConnectionString);
-            conexao.Open();
-            return conexao;
+            try
+            {
+                conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["PEuInfoWeb.Properties.Settings.strConnection"].ConnectionString);
+                conexao.Open();
+                return conexao;
+            }
+            catch (SqlException sqlex)
+            {
+                throw sqlex;
+            }
         }
 
     }
