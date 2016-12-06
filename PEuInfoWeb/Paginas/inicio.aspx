@@ -1,10 +1,16 @@
 ﻿<%@ Page Title="Login Administrador" Language="C#" MasterPageFile="~/Paginas/PEuInfoWeb.Master" AutoEventWireup="true" CodeBehind="inicio.aspx.cs" Inherits="PEuInfoWeb.Paginas.peuLoginAdm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="conteudo" runat="server">
     <form id="form1" runat="server">
-    <asp:Panel ID="pnPrincinpal" runat="server" CssClass="container" Height="52px">
-      <asp:Panel ID="IdPanelCadas" runat="server"  CssClass="panel panel-primary center-block" Width="800px">
+            <div class="navbar-form pull-right form-inline">
+                <asp:TextBox ID="txtLoginEmail" runat="server" CssClass="form-control" placeholder="exemplo@exemplo.com.br" TextMode="Email"></asp:TextBox>
+                <asp:TextBox ID="txtLoginSenha" runat="server" CssClass="form-control" placeholder="*********" TextMode="Password"></asp:TextBox>
+                <asp:LinkButton ID="lbLogar" runat="server" CssClass="btn btn-primary" Text="Entrar" ValidationGroup="vgLogar" OnClick="lbLogar_Click"></asp:LinkButton> 
+            </div>   
+
+    <asp:Panel ID="pnPrincinpal" runat="server" CssClass="container input-group row" Height="100%" Width="100%" >
+      <asp:Panel ID="IdPanelCadas" runat="server"  CssClass="panel panel-body panel-primary center-block" Width="800px">
           <div class="panel-heading">
-              <h3 class="panel-title">Cadastro-Se</h3>
+              <h3 class="panel-title">Cadastra-se</h3>
           </div>
           <div class="panel-body">
               <div class="col-md-6 pull-left"> 
@@ -56,20 +62,26 @@
               </div>
           </div>
 
-          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvNome" ControlToValidate="txtNome" ForeColor="Red" ErrorMessage="Digite seu Nome de Usuário">
+          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvNome" ControlToValidate="txtNome" ErrorMessage="Digite seu Nome de Usuário" Display="None">
           </asp:RequiredFieldValidator>
-          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvEmail" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Digite seu Email">
+          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvEmail" ControlToValidate="txtEmail" ErrorMessage="Digite seu Email" Display="None">
           </asp:RequiredFieldValidator>
-          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvConfEmail" ControlToValidate="txtConfEmail" ForeColor="Red" ErrorMessage="Digite a Confirmação do Email">
+          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvConfEmail" ControlToValidate="txtConfEmail" ErrorMessage="Digite a Confirmação do Email" Display="None">
           </asp:RequiredFieldValidator>
-          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvDataNasc" ControlToValidate="txtDataNasc" ForeColor="Red" ErrorMessage="Digite sua Data de Nascimento">
+          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvDataNasc" ControlToValidate="txtDataNasc" ErrorMessage="Digite sua Data de Nascimento" Display="None">
           </asp:RequiredFieldValidator>
-          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvSenha" ControlToValidate="txtSenha" ForeColor="Red" ErrorMessage="Digite sua Senha">
+          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvSenha" ControlToValidate="txtSenha" ErrorMessage="Digite sua Senha" Display="None">
           </asp:RequiredFieldValidator>
-          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvConfSenha" ControlToValidate="txtConfirmarSenha" ForeColor="Red" ErrorMessage="Digite a Confirmação da Senha">
+          <asp:RequiredFieldValidator runat="server" ValidationGroup="salvar" ID="rfvConfSenha" ControlToValidate="txtConfirmarSenha" ErrorMessage="Digite a Confirmação da Senha" Display="None">
+          </asp:RequiredFieldValidator>
+          <asp:RequiredFieldValidator runat="server" ValidationGroup="vgLogar" ID="rfvEmailLogin" ControlToValidate="txtLoginEmail" ErrorMessage="Digite seu Email para Logar" Display="None">
+          </asp:RequiredFieldValidator>
+          <asp:RequiredFieldValidator runat="server" ValidationGroup="vgLogar" ID="rfvSenhaLogin" ControlToValidate="txtLoginSenha" ErrorMessage="Digite sua Senha para Logar" Display="None">
           </asp:RequiredFieldValidator>
 
-          <asp:ValidationSummary runat="server" ValidationGroup="salvar" ID="vsErro" ShowMessageBox="true" />
+
+          <asp:ValidationSummary runat="server" ValidationGroup="salvar" ID="vsErroCads"  ShowMessageBox="true" ShowSummary="false"/>
+          <asp:ValidationSummary runat="server" ValidationGroup="vgLogar" ID="vsErroLogin"  ShowMessageBox="true" ShowSummary="false"/>
 
       </asp:Panel>
   </asp:Panel>
