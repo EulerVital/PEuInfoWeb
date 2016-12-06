@@ -77,34 +77,26 @@ namespace PEuInfoWeb.Camadas.DAO
 
         #region Cadastrar e Alterar User
 
-        public bool gravarUser(eUsuarioDadosPessoais usuario)
+        public int gravarUser(eUsuarioDadosPessoais usuario)
         {
             SqlComd = new SqlCommand();
             SqlComd.CommandType = CommandType.StoredProcedure;
             SqlComd.CommandText = "USP_INS_USER_DADOS_PESSOAIS";
 
-            SqlComd.Parameters.AddWithValue("@Id", null);
-            SqlComd.Parameters.AddWithValue("@Nome",usuario.Nome);
-            SqlComd.Parameters.AddWithValue("@Email", usuario.Email);
-            SqlComd.Parameters.AddWithValue("@Senha", usuario.Senha);
-            SqlComd.Parameters.AddWithValue("@Telefone", usuario.Telefone);
-            SqlComd.Parameters.AddWithValue("@Celular", usuario.Celular);
-            SqlComd.Parameters.AddWithValue("@DataNascimento", usuario.DataNascimento);
-
-            SqlCon = Conectar();
-            SqlComd.Connection = SqlCon;
-
             try
             {
-                int afetatos = SqlComd.ExecuteNonQuery();
+                SqlComd.Parameters.AddWithValue("@Id", null);
+                SqlComd.Parameters.AddWithValue("@Nome",usuario.Nome);
+                SqlComd.Parameters.AddWithValue("@Email", usuario.Email);
+                SqlComd.Parameters.AddWithValue("@Senha", usuario.Senha);
+                SqlComd.Parameters.AddWithValue("@Telefone", usuario.Telefone);
+                SqlComd.Parameters.AddWithValue("@Celular", usuario.Celular);
+                SqlComd.Parameters.AddWithValue("@DataNascimento", usuario.DataNascimento);
 
-                if(afetatos > 0)
-                {
-                    return true;
-                }else
-                {
-                    return false;
-                }
+                SqlCon = Conectar();
+                SqlComd.Connection = SqlCon;
+
+                return SqlComd.ExecuteNonQuery();
 
             }catch(SqlException sqlex)
             {

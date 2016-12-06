@@ -70,6 +70,8 @@
     <Content Include="bootstrap\Scripts\jquery.mask.js" />
     <Content Include="bootstrap\Scripts\jquery.mask.min.js" />
     <Content Include="bootstrap\Scripts\jquery.maskedinput-1.3.min.js" />
+    <Content Include="bootstrap\Scripts\transition.min.js" />
+    <Content Include="Conteudo\img\2.jpg" />
     <Content Include="DataBase\Procedures\USP_DEL_USER_DADOS_PESSOAIS.sql" />
     <Content Include="DataBase\Procedures\USP_INS_USER_DADOS_PESSOAIS.sql" />
     <Content Include="DataBase\Procedures\USP_INS_USER_LOGIN.sql" />
@@ -81,6 +83,7 @@
     <Content Include="packages.config" />
     <Content Include="bootstrap\Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="bootstrap\Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Paginas\inicio2.aspx" />
     <Content Include="Paginas\PEuInfoWeb.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -120,10 +123,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camadas\DAO\dLoginUser.cs" />
     <Compile Include="Camadas\DAO\dUsuarioDadosPessoais.cs" />
     <Compile Include="Camadas\DAO\DBUtil\dConexao.cs" />
+    <Compile Include="Camadas\ENT\eLoginUser.cs" />
     <Compile Include="Camadas\ENT\eUsuarioDadosPessoais.cs" />
+    <Compile Include="Camadas\NEG\nLoginUser.cs" />
     <Compile Include="Camadas\NEG\nUsuarioDadosPessoais.cs" />
+    <Compile Include="Paginas\inicio2.aspx.cs">
+      <DependentUpon>inicio2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\inicio2.aspx.designer.cs">
+      <DependentUpon>inicio2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\PEuInfoWeb.Master.cs">
       <DependentUpon>PEuInfoWeb.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,6 +161,7 @@
   <ItemGroup>
     <Folder Include="DataBase\Fuctions\" />
     <Folder Include="DataBase\Views\" />
+    <Folder Include="Paginas\UserControls\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

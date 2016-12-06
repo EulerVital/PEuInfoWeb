@@ -22,6 +22,33 @@ namespace PEuInfoWeb.Paginas {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// txtLoginEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLoginEmail;
+        
+        /// <summary>
+        /// txtLoginSenha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLoginSenha;
+        
+        /// <summary>
+        /// lbLogar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLogar;
+        
+        /// <summary>
         /// pnPrincinpal control.
         /// </summary>
         /// <remarks>
@@ -175,12 +202,39 @@ namespace PEuInfoWeb.Paginas {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvConfSenha;
         
         /// <summary>
-        /// vsErro control.
+        /// rfvEmailLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary vsErro;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmailLogin;
+        
+        /// <summary>
+        /// rfvSenhaLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSenhaLogin;
+        
+        /// <summary>
+        /// vsErroCads control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsErroCads;
+        
+        /// <summary>
+        /// vsErroLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsErroLogin;
     }
 }

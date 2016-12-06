@@ -30,7 +30,7 @@ namespace PEuInfoWeb.Camadas.NEG
 
         #region Cadastrar e Alterar Usuario
 
-        public bool gravarUser(eUsuarioDadosPessoais usuario)
+        public int gravarUser(eUsuarioDadosPessoais usuario)
         {
             try
             {

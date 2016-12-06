@@ -16,6 +16,12 @@ namespace PEuInfoWeb.Paginas
         nUsuarioDadosPessoais user;
 
         #region Eventos
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
         protected void lbSalvar_Click(object sender, EventArgs e)
         {
             usuario = new eUsuarioDadosPessoais();
@@ -29,16 +35,34 @@ namespace PEuInfoWeb.Paginas
             txtDataNasc.Text = txtDataNasc.Text.Replace("/", "");
             usuario.DataNascimento = txtDataNasc.Text;
 
-            if (user.gravarUser(usuario))
+            if (user.gravarUser(usuario) > 0)
             {
                 Response.Write("<script language='javascript'>alert('Cadastro efetuado com Sucesso !!')</script>");
-            }else
+            }
+            else
             {
-                Response.Write("<script language='javascript'>alert('Erro ao efetuado o cadastro !!')</script>");
+                Response.Write("<script language='javascript'>alert('Você já possui cadastro !!')</script>");
             }
 
             LimparCampos();
 
+        }
+
+        protected void lbLogar_Click(object sender, EventArgs e)
+        {
+            eLoginUser logar = new eLoginUser();
+
+            logar = nLoginUser.LogarUser(txtLoginEmail.Text, txtLoginSenha.Text);
+            logar.status = 1;
+            logar.Email = txtLoginEmail.Text;
+            logar.Senha = txtLoginSenha.Text;
+            if(nLoginUser.GravarLogin(logar) > 0)
+            {
+                Response.Redirect("inicio2.aspx");
+            }else
+            {
+                Response.Write("<script language='javascript'>alert('Login não encontrado !')</script>");
+            }
         }
 
         #endregion

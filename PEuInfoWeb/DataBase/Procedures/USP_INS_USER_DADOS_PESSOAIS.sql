@@ -14,19 +14,24 @@ CREATE PROC USP_INS_USER_DADOS_PESSOAIS
 	,@DataNascimento VARCHAR(10) = NULL
 AS
 BEGIN
+	DECLARE @VerificarEmail INT = (select count(email) from TB_USER_DADOS_PESSOAIS where Email = @Email)
+
 	IF @Id IS NULL
 	BEGIN
-		INSERT INTO
-			TB_USER_DADOS_PESSOAIS
-		VALUES
-		(
-			 @Nome
-			,LOWER(@Email)
-			,@Senha
-			,@Telefone
-			,@Celular
-			,@DataNascimento
-		)
+		IF @VerificarEmail = 0
+		BEGIN
+			INSERT INTO
+				TB_USER_DADOS_PESSOAIS
+			VALUES
+			(
+				 @Nome
+				,LOWER(@Email)
+				,@Senha
+				,@Telefone
+				,@Celular
+				,@DataNascimento
+			)
+		END
 	END
 	ELSE
 	BEGIN
