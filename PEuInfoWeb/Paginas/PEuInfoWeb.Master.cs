@@ -12,6 +12,9 @@ namespace PEuInfoWeb.Paginas
     public partial class PEuInfoWeb : System.Web.UI.MasterPage
     {
 
+        protected void btnSair_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

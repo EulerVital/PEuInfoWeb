@@ -22,6 +22,24 @@ namespace PEuInfoWeb.Paginas {
         protected global::System.Web.UI.WebControls.Panel divCsharp;
         
         /// <summary>
+        /// uccsharp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::PEuInfoWeb.Paginas.UserControls.ucCSharp uccsharp;
+        
+        /// <summary>
+        /// divJava control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel divJava;
+        
+        /// <summary>
         /// divPython control.
         /// </summary>
         /// <remarks>

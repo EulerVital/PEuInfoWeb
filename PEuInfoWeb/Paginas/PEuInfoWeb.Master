@@ -31,8 +31,11 @@
 <body style="background-image:url('http://petmcem.ufsc.br/files/2011/08/2.jpg')" class="embed-responsive embed-responsive-16by9">
     <div class="navbar-fixed-top navbar-inverse" runat="server">
         <a href="inicio.aspx" style="text-decoration:none;"><h2>PEuInfoWeb</h2></a>
+        <div class="pull-right form-inline">
+            <a href="inicio.aspx" runat="server" class="btn btn-danger" name="btnSair" onclick="btnSair_Click">Sair</a>
+        </div>   
     </div>
-    <br /><br /><br />
+    <br /><br /><br /><br /><br />
     <asp:ContentPlaceHolder ID="conteudo" runat="server">
     </asp:ContentPlaceHolder>
     <br />

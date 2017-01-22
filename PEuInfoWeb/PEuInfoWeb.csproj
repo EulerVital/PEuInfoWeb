@@ -18,8 +18,8 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -118,6 +118,7 @@
     <Content Include="bootstrap\Scripts\jquery-3.1.1.slim.js" />
     <Content Include="bootstrap\Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Paginas\inicio.aspx" />
+    <Content Include="Paginas\UserControls\ucCSharp.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -151,6 +152,13 @@
     <Compile Include="Paginas\inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\UserControls\ucCSharp.ascx.cs">
+      <DependentUpon>ucCSharp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\UserControls\ucCSharp.ascx.designer.cs">
+      <DependentUpon>ucCSharp.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -161,7 +169,6 @@
   <ItemGroup>
     <Folder Include="DataBase\Fuctions\" />
     <Folder Include="DataBase\Views\" />
-    <Folder Include="Paginas\UserControls\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
